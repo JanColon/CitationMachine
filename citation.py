@@ -1,3 +1,5 @@
+cite = None
+
 print ("Jan's Citation Machine")
 print ("Press ENTER key to continue")
 start_type = input()
@@ -38,4 +40,17 @@ if next == next:
 
 ###--The finished citation--###
 if finish == finish:
-	print (author + "." + " " + title + "." + " " + comp + (".") + " " + date + (",") + " " + url + " " + next)
+        cite = author + "." + " " + title + "." + " " + comp + (".") + " " + date + (",") + " " + url + " " + next + "\n" + "\n"
+        print (cite)
+
+if cite != None:
+        print("Do you want to add this to a bibliography? 'Y or N'")
+        bib_clar = input()
+
+if bib_clar == "Y":
+        bib = open("Bibliography.txt", "a")
+        bib.write(cite)
+        bib.close()
+        print("Citation added! Check 'Bibliography.txt'")
+else:
+        pass
